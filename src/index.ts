@@ -10,7 +10,6 @@ export const lastCall = (spy: jasmine.Spy, argNr = 0) => {
 
 type TId = string | number;
 export class SpyUtil {
-
     private subscriptions: Subscription[];
     private spies: { [id: string]: jasmine.Spy };
     constructor() {
@@ -18,14 +17,13 @@ export class SpyUtil {
         this.spies = {};
     }
 
-
     public spySubscribe<T>(obj: Observable<T>, id: TId) {
         const spy: jasmine.Spy = jasmine.createSpy(`${id}`);
         this.subscribeOn(obj.subscribe(spy));
         this.spies[id] = spy;
     }
 
-    public    spyException<T>(obj: Observable<T>, id: TId) {
+    public spyException<T>(obj: Observable<T>, id: TId) {
         const spy: jasmine.Spy = jasmine.createSpy(`${id}`);
         this.subscribeOn(obj.subscribe(undefined, spy));
         this.spies[id] = spy;
@@ -43,7 +41,7 @@ export class SpyUtil {
         return this.spies[id];
     }
 
-    public argsFor<T>(id: TId, callIndex:number): T[] {
+    public argsFor<T>(id: TId, callIndex: number): T[] {
         return this.spies[id].calls.argsFor(callIndex);
     }
 
@@ -52,13 +50,11 @@ export class SpyUtil {
     }
 
     public lastOfAll() {
-        return this.all()
-            .map(spy => lastCall(spy));
+        return this.all().map(spy => lastCall(spy));
     }
 
     public all(): jasmine.Spy[] {
-        return Object.keys(this.spies)
-            .map(key => this.spies[key]);
+        return Object.keys(this.spies).map(key => this.spies[key]);
     }
 
     public allCounts(): number[] {
@@ -71,7 +67,6 @@ export class SpyUtil {
             .map(key => this.spies[key]);
     }
 
-
     public unsubscribe() {
         this.all().forEach(spy => spy.calls.reset());
         this.subscriptions.defined().forEach(subscriber => subscriber.unsubscribe());
@@ -81,5 +76,4 @@ export class SpyUtil {
     private subscribeOn(subscription: Subscription) {
         this.subscriptions.push(subscription);
     }
-
 }

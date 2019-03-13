@@ -16,6 +16,7 @@ module.exports = function (config) {
             }
         },
         reporters: ["progress", "coverage", "karma-typescript"],
-        browsers: ["ChromeHeadless"]
+        browsers: ["ChromeHeadless"],
+        autoWatch: true,
     });
 };

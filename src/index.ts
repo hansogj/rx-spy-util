@@ -5,7 +5,7 @@ export const lastCall = (spy: jasmine.Spy, argNr = 0) => {
     if (defined(spy.calls.mostRecent())) {
         return spy.calls.mostRecent().args[argNr];
     }
-    throw new Error(`Spy ${spy.name} has not been called`.replace(/\s\s/, '  '));
+    throw new Error(`Spy ${defined(spy.name) ? spy.name : spy.and.identity} has not been called`.replace(/\s\s/, '  '));
 };
 
 type TId = string | number;
@@ -69,7 +69,7 @@ export class SpyUtil {
 
     public unsubscribe() {
         this.all().forEach(spy => spy.calls.reset());
-        this.subscriptions.defined().forEach(subscriber => subscriber.unsubscribe());
+        this.subscriptions.filter(subscriber => defined(subscriber)).forEach(subscriber => subscriber.unsubscribe());
         this.subscriptions = [];
     }
 

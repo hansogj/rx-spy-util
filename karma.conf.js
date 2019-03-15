@@ -8,11 +8,11 @@ module.exports = function(config) {
 
         files: ['src/**'],
         preprocessors: {
-            'src/**': 'karma-typescript', // *.tsx for React Jsx
+            'src/**': ['karma-typescript',  'coverage']
         },
         autoWatch: true,
         singleRun: false,
-        reporters: ['progress', 'karma-typescript'],
+        reporters: ['progress', 'coverage', 'karma-typescript'],
         browsers: ['ChromeHeadless'],
     });
 };

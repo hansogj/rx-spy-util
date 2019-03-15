@@ -1,60 +1,62 @@
 {
-  "name": "rx-spy-util",
-  "version": "1.0.0",
-  "description": "Spyutils to subscribeables spies",
-  "main": "lib/index.js",
-  "types": "lib/index.d.ts",
-  "files": [
-    "lib/**/*"
-  ],
-  "scripts": {
-    "test": "npm run lint && karma start  karma.conf.js --single-run",
-    "test:watch": "karma start  karma.conf.js ",
-    "test:watch:debug": "npm run test:watch -- --browsers=Chrome",
-    "build": "tsc",
-    "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
-    "lint": "tslint -p tsconfig.json",
-    "prepare": "npm test && npm run build",
-    "prepublishOnly": "npm test && npm run lint",
-    "preversion": "npm run lint",
-    "version": "npm run format && git add -A src",
-    "postversion": "git push && git push --tags"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/hansogj/spy-util.git"
-  },
-  "keywords": [
-    "rxjs",
-    "jasmine",
-    "spy",
-    "ts",
-    "subscription"
-  ],
-  "author": "Hans Ole Gjerdrum <hansogj@gmail.com>",
-  "contributors": [
-    "Robin Pedersen <robinnibor94@gmail.com>"
-  ],
-  "license": "MIT",
-  "dependencies": {},
-  "devDependencies": {
-    "@types/jasmine": "^3.3.9",
-    "@types/node": "^11.11.1",
-    "array.defined": "^2.4.0",
-    "awesome-typescript-loader": "^5.2.1",
-    "browserify": "^16.2.3",
-    "jasmine-core": "^3.3.0",
-    "karma": "^4.0.1",
-    "karma-browserify": "^6.0.0",
-    "karma-chrome-launcher": "^2.2.0",
-    "karma-coverage": "^1.1.2",
-    "karma-jasmine": "^2.0.1",
-    "karma-typescript": "^4.0.0",
-    "prettier": "^1.16.4",
-    "rxjs": "^6.4.0",
-    "ts": "^0.2.2",
-    "tslint": "^5.14.0",
-    "tslint-config-prettier": "^1.18.0",
-    "typescript": "^3.3.3333"
-  }
+    "name": "rx-spy-util",
+    "version": "1.0.0",
+    "description": "Spyutils to subscribeables spies",
+    "main": "lib/index.js",
+    "types": "lib/index.d.ts",
+    "files": [
+        "lib/**/*"
+    ],
+    "scripts": {
+        "clean": "rm -rf node _modules lib coverage  *.tgz",
+        "test": "npm run lint && karma start  karma.conf.js --single-run",
+        "test:watch": "karma start  karma.conf.js ",
+        "test:watch:debug": "npm run test:watch -- --browsers=Chrome",
+        "build": "tsc",
+        "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
+        "lint": "tslint -p tsconfig.json",
+        "prepare": "npm test && npm run build",
+        "prepublishOnly": "npm test && npm run lint",
+        "preversion": "npm run lint",
+        "version": "npm run format && git add -A src",
+        "postversion": "git push && git push --tags"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/hansogj/spy-util.git"
+    },
+    "keywords": [
+        "rxjs",
+        "jasmine",
+        "spy",
+        "ts",
+        "subscription"
+    ],
+    "author": "Hans Ole Gjerdrum <hansogj@gmail.com>",
+    "contributors": [
+        "Robin Pedersen <robinnibor94@gmail.com>"
+    ],
+    "license": "MIT",
+    "dependencies": {
+        "array.defined": "^2.4.0"
+    },
+    "devDependencies": {
+        "@types/jasmine": "^3.3.9",
+        "@types/node": "^11.11.1",
+        "awesome-typescript-loader": "^5.2.1",
+        "browserify": "^16.2.3",
+        "jasmine-core": "^3.3.0",
+        "karma": "^4.0.1",
+        "karma-browserify": "^6.0.0",
+        "karma-chrome-launcher": "^2.2.0",
+        "karma-coverage": "^1.1.2",
+        "karma-jasmine": "^2.0.1",
+        "karma-typescript": "^4.0.0",
+        "prettier": "^1.16.4",
+        "ts": "^0.2.2",
+        "tslint": "^5.14.0",
+        "tslint-config-prettier": "^1.18.0",
+        "typescript": "^3.3.3333",
+        "rxjs": "^6.4.0"
+    }
 }

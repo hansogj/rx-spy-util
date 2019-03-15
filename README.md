@@ -34,7 +34,7 @@ $> npm i && npm test
 ```
 
 ### Dependencies
-Your project should have _rxjs_, _array.defined_ and _jasmine_ installed  - these are not bundled with this package to prevent version conflicts
+Your project should have _rxjs_,and _jasmine_ installed  - these are omitted in the bundle to avoid version conflicts
 
 
 ### Todo

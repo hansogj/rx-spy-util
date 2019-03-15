@@ -5,7 +5,7 @@ Collect all your spies to observable values in one util. SpyUtil helps you keep 
 
 ### Usage
 
-For extended excamples, se [main.spec.ts]('./src/main.spec.ts')
+For extended excamples, se [main.spec.ts]('https://github.com/hansogj/rx-spy-util/blob/master/src/main.spec.ts')
 
 ```js
 const key =  'someKey';
